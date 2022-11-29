@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f826b71-bc48-4034-b769-e11854f8ce86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Imperial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Metric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Root.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Temperature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/exception/CityNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/locations/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/locations/TopCityCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/client/AccuWeatherClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/service/AccuWeatherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ktoskazalnet/client/AccuWeatherClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ktoskazalnet/service/AccuWeatherServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2I832CkBCIxNKSLK0atntGz3VDl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;device.file.explorer&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ktoskazalnet.accuweather_api.current_conditions" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.ktoskazalnet.client" />
+      <recent name="org.ktoskazalnet.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AccuWeatherServiceTest.checkWeather_ShouldThrowCityNotFoundException">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ktoskazalnet.App" />
+      <module name="WeatherApp" />
+      <option name="PROGRAM_PARAMETERS" value="78inuGQrT5TN7OYgXVM3EJVR9ZmOPhek" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ktoskazalnet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccuWeatherServiceTest.checkWeather_ShouldReturnCurrentCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ktoskazalnet.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ktoskazalnet.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ktoskazalnet.service.AccuWeatherServiceTest" />
+      <option name="METHOD_NAME" value="checkWeather_ShouldReturnCurrentCondition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccuWeatherServiceTest.checkWeather_ShouldThrowCityNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ktoskazalnet.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ktoskazalnet.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ktoskazalnet.service.AccuWeatherServiceTest" />
+      <option name="METHOD_NAME" value="checkWeather_ShouldThrowCityNotFoundException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccuWeatherServiceTest.getCitiesList_ShouldReturnTopCitiesList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ktoskazalnet.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ktoskazalnet.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ktoskazalnet.service.AccuWeatherServiceTest" />
+      <option name="METHOD_NAME" value="getCitiesList_ShouldReturnTopCitiesList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AccuWeatherServiceTest.checkWeather_ShouldThrowCityNotFoundException" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AccuWeatherServiceTest.checkWeather_ShouldReturnCurrentCondition" />
+        <item itemvalue="JUnit.AccuWeatherServiceTest.getCitiesList_ShouldReturnTopCitiesList" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f826b71-bc48-4034-b769-e11854f8ce86" name="Changes" comment="" />
+      <created>1669549174418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669549174418</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
