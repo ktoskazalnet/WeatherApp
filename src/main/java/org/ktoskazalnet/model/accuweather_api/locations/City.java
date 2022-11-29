@@ -10,6 +10,14 @@ public class City {
     @JsonProperty("EnglishName")
     private String englishName;
 
+    public City(String key, String englishName) {
+        this.key = key;
+        this.englishName = englishName;
+    }
+
+    public City() {
+    }
+
     public String getKey() {
         return key;
     }

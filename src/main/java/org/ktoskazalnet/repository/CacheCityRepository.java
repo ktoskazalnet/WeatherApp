@@ -21,7 +21,4 @@ public class CacheCityRepository {
     public Optional<City> getByKey(String key) {
         return Optional.ofNullable(cityMapCache.get(key));
     }
-
-
-
 }

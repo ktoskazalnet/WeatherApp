@@ -9,6 +9,7 @@ import org.ktoskazalnet.repository.CacheCityRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AccuWeatherService {
@@ -25,13 +26,15 @@ public class AccuWeatherService {
     }
 
     public List<CurrentConditionRoot> getCurrentCondition(TopCityCount topCityCount) {
-        if (topCityCount.getCount() > cacheCityRepository.getCache().size()) {
+        Map<String, City> cache = cacheCityRepository.getCache();
+
+        if (topCityCount.getCount() > cache.size()) {
             System.out.println("topCityCount > cache.size, populating cache...");
             accuWeatherClient.getTopCities(topCityCount).forEach(cacheCityRepository::add);
-            System.out.println("Cache was populated: " + cacheCityRepository.getCache());
+            System.out.println("Cache was populated: " + cache);
         }
 
-        System.out.println(cacheCityRepository.getCache());
+        System.out.println(cache);
         System.out.println("Choose the city by key...");
 
         String cityKey = scanner.nextLine();

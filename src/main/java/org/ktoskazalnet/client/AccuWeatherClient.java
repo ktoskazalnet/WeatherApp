@@ -7,7 +7,6 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.ktoskazalnet.model.accuweather_api.current_conditions.CurrentConditionRoot;
-import org.ktoskazalnet.exception.CityNotFoundException;
 import org.ktoskazalnet.model.accuweather_api.locations.City;
 import org.ktoskazalnet.model.accuweather_api.locations.TopCityCount;
 
@@ -18,7 +17,9 @@ public class AccuWeatherClient {
     private final OkHttpClient okHttpClient;
     private final String apiKey;
 
-    public AccuWeatherClient(ObjectMapper objectMapper, OkHttpClient okHttpClient, String apiKey) {
+    public AccuWeatherClient(ObjectMapper objectMapper,
+                             OkHttpClient okHttpClient,
+                             String apiKey) {
         this.objectMapper = objectMapper;
         this.okHttpClient = okHttpClient;
         this.apiKey = apiKey;
@@ -35,24 +36,12 @@ public class AccuWeatherClient {
                 .addQueryParameter("apikey", apiKey)
                 .build();
 
-        Request request = getRequest(httpUrl);
+        TypeReference<List<City>> typeReference = new TypeReference<>() {
+        };
 
-        try {
-            System.out.println("Sending rq: " + request);
-            Response response = okHttpClient.newCall(request).execute();
-            System.out.println("Receiving rs: " + response);
-            String json = response.body().string();
-            return objectMapper.readValue(json, new TypeReference<>() {});
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        return sendRq(httpUrl, typeReference);
     }
 
-    private static Request getRequest(HttpUrl httpUrl) {
-        return new Request.Builder()
-                .url(httpUrl)
-                .build();
-    }
 
     public List<CurrentConditionRoot> getCurrentCondition(String key) {
         HttpUrl httpUrl = new HttpUrl.Builder()
@@ -64,16 +53,28 @@ public class AccuWeatherClient {
                 .addQueryParameter("apikey", apiKey)
                 .build();
 
-        Request request = getRequest(httpUrl);
+        TypeReference<List<CurrentConditionRoot>> typeReference = new TypeReference<>() {
+        };
 
+        return sendRq(httpUrl, typeReference);
+    }
+
+    private <T> T sendRq(HttpUrl httpUrl, TypeReference<T> tTypeReference) {
         try {
+            Request request = new Request.Builder()
+                    .url(httpUrl)
+                    .build();
+
             System.out.println("Sending rq: " + request);
             Response response = okHttpClient.newCall(request).execute();
             System.out.println("Receiving rs: " + response);
             String json = response.body().string();
-           return objectMapper.readValue(json, new TypeReference<>() {});
+
+            return objectMapper.readValue(json, tTypeReference);
+
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e.getMessage());
         }
     }
 }
