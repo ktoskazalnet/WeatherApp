@@ -1,4 +1,4 @@
-package org.ktoskazalnet.accuweather_api.locations;
+package org.ktoskazalnet.model.accuweather_api.locations;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

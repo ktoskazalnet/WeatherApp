@@ -1,4 +1,4 @@
-package org.ktoskazalnet.accuweather_api.current_conditions;
+package org.ktoskazalnet.model.accuweather_api.current_conditions;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Root {
+public class CurrentConditionRoot {
     @JsonProperty("LocalObservationDateTime")
     public Date localObservationDateTime;
     @JsonProperty("EpochTime")

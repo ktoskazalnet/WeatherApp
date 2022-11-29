@@ -2,10 +2,13 @@ package org.ktoskazalnet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.squareup.okhttp.OkHttpClient;
-import org.ktoskazalnet.accuweather_api.locations.TopCityCount;
 import org.ktoskazalnet.client.AccuWeatherClient;
+import org.ktoskazalnet.model.accuweather_api.current_conditions.CurrentConditionRoot;
+import org.ktoskazalnet.model.accuweather_api.locations.TopCityCount;
+import org.ktoskazalnet.repository.CacheCityRepository;
 import org.ktoskazalnet.service.AccuWeatherService;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -16,28 +19,38 @@ public class App {
         OkHttpClient okHttpClient = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
 
-        AccuWeatherClient accuWeatherClient = new AccuWeatherClient(objectMapper, okHttpClient, args[0]);
-        AccuWeatherService accuWeatherService = new AccuWeatherService(accuWeatherClient);
-
-        start(accuWeatherService);
-    }
-
-    public static void start(AccuWeatherService accuWeatherService) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("How many cities do you want to see? (50 - 100 - 150)");
-            int count = scanner.nextInt();
-            System.out.println(accuWeatherService.getCitiesList(TopCityCount.valueOf(count)));
-            System.out.println("Choose city: ");
-            String cityName = scanner.next();
-            System.out.println(accuWeatherService.checkWeather(cityName));
-            System.out.println("Do you want to check weather in another city? Y - yes, N - no");
-            String answer = scanner.next();
+        AccuWeatherClient accuWeatherClient =
+                new AccuWeatherClient(objectMapper, okHttpClient, args[0]);
+        CacheCityRepository cityRepository = new CacheCityRepository();
 
-            if (answer.equalsIgnoreCase("N")) {
-                break;
+        AccuWeatherService accuWeatherService =
+                new AccuWeatherService(accuWeatherClient, cityRepository, scanner);
+
+        start(accuWeatherService, scanner);
+    }
+
+    public static void start(AccuWeatherService accuWeatherService, Scanner scanner) {
+        try (scanner) {
+            while (true) {
+                System.out.println("How many cities do you want to see? (50/100/150)");
+                int count = Integer.parseInt(scanner.nextLine());
+
+                List<CurrentConditionRoot> currentConditionRoots =
+                        accuWeatherService.getCurrentCondition(TopCityCount.valueOf(count));
+
+                System.out.println(currentConditionRoots);
+
+                System.out.println("Do you want to check weather in another city? Y - yes, N - no");
+                String answer = scanner.nextLine();
+
+                if (answer.equalsIgnoreCase("N")) {
+                    break;
+                }
             }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -1,10 +1,10 @@
-package org.ktoskazalnet.accuweather_api.current_conditions;
+package org.ktoskazalnet.model.accuweather_api.current_conditions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Metric {
+public class Imperial {
     @JsonProperty("Value")
-    public double value;
+    public int value;
     @JsonProperty("Unit")
     public String unit;
     @JsonProperty("UnitType")
@@ -12,7 +12,7 @@ public class Metric {
 
     @Override
     public String toString() {
-        return "Metric{" +
+        return "Imperial{" +
                 "value=" + value +
                 ", unit='" + unit + '\'' +
                 ", unitType=" + unitType +

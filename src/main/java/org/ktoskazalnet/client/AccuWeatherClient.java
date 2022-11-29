@@ -6,10 +6,10 @@ import com.squareup.okhttp.HttpUrl;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import org.ktoskazalnet.accuweather_api.current_conditions.Root;
-import org.ktoskazalnet.accuweather_api.exception.CityNotFoundException;
-import org.ktoskazalnet.accuweather_api.locations.City;
-import org.ktoskazalnet.accuweather_api.locations.TopCityCount;
+import org.ktoskazalnet.model.accuweather_api.current_conditions.CurrentConditionRoot;
+import org.ktoskazalnet.exception.CityNotFoundException;
+import org.ktoskazalnet.model.accuweather_api.locations.City;
+import org.ktoskazalnet.model.accuweather_api.locations.TopCityCount;
 
 import java.util.List;
 
@@ -25,55 +25,36 @@ public class AccuWeatherClient {
     }
 
     public List<City> getTopCities(TopCityCount topCityCount) {
-        String json;
-        List<City> cityList;
-        int count = topCityCount.getCount();
-
         HttpUrl httpUrl = new HttpUrl.Builder()
                 .scheme("http")
                 .host("dataservice.accuweather.com")
                 .addPathSegment("locations")
                 .addPathSegment("v1")
                 .addPathSegment("topcities")
-                .addPathSegment("" + count)
+                .addPathSegment(String.valueOf(topCityCount.getCount()))
                 .addQueryParameter("apikey", apiKey)
                 .build();
 
-        Request request = new Request.Builder()
-                .url(httpUrl)
-                .build();
+        Request request = getRequest(httpUrl);
 
         try {
+            System.out.println("Sending rq: " + request);
             Response response = okHttpClient.newCall(request).execute();
-            json = response.body().string();
-            cityList = objectMapper.readValue(json,
-                    new TypeReference<>() {});
+            System.out.println("Receiving rs: " + response);
+            String json = response.body().string();
+            return objectMapper.readValue(json, new TypeReference<>() {});
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return cityList;
     }
 
-    public List<Root> getCurrentCondition(String cityName) {
-        String json;
-        List<Root> conditionsList;
-        List<City> cities = getTopCities(TopCityCount.ONE_HUNDRED_FIFTY);
-        String key = null;
+    private static Request getRequest(HttpUrl httpUrl) {
+        return new Request.Builder()
+                .url(httpUrl)
+                .build();
+    }
 
-        for (City city : cities) {
-            if (city.getEnglishName().equals(cityName)) {
-                key = city.getKey();
-            }
-        }
-
-        if (key == null) {
-            try {
-                throw new CityNotFoundException();
-            } catch (CityNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
+    public List<CurrentConditionRoot> getCurrentCondition(String key) {
         HttpUrl httpUrl = new HttpUrl.Builder()
                 .scheme("http")
                 .host("dataservice.accuweather.com")
@@ -83,18 +64,16 @@ public class AccuWeatherClient {
                 .addQueryParameter("apikey", apiKey)
                 .build();
 
-        Request request = new Request.Builder()
-                .url(httpUrl)
-                .build();
+        Request request = getRequest(httpUrl);
 
         try {
+            System.out.println("Sending rq: " + request);
             Response response = okHttpClient.newCall(request).execute();
-            json = response.body().string();
-            conditionsList = objectMapper.readValue(json,
-                    new TypeReference<>() {});
+            System.out.println("Receiving rs: " + response);
+            String json = response.body().string();
+           return objectMapper.readValue(json, new TypeReference<>() {});
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return conditionsList;
     }
 }

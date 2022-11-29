@@ -1,4 +1,4 @@
-package org.ktoskazalnet.accuweather_api.locations;
+package org.ktoskazalnet.model.accuweather_api.locations;
 
 public enum TopCityCount {
     FIFTY(50), HUNDRED(100), ONE_HUNDRED_FIFTY(150);

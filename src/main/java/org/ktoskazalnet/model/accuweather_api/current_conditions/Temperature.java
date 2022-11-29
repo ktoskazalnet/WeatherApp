@@ -1,4 +1,4 @@
-package org.ktoskazalnet.accuweather_api.current_conditions;
+package org.ktoskazalnet.model.accuweather_api.current_conditions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
