@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f826b71-bc48-4034-b769-e11854f8ce86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Imperial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Metric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Root.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/current_conditions/Temperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/exception/CityNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/locations/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/accuweather_api/locations/TopCityCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/client/AccuWeatherClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/service/AccuWeatherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/ktoskazalnet/client/AccuWeatherClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/ktoskazalnet/service/AccuWeatherServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/service/AccuWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ktoskazalnet/service/AccuWeatherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
